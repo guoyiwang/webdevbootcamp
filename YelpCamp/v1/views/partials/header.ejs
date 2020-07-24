@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>YelpCamp</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    </head>
+    <body>
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
+        <div class="container-fluid">
+            <!-- Narbar brand -->
+            <a class="navbar-brand" href="/">YelpCamp</a>
+    
+            <!-- Collapse botton -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="navbar1">
+                <ul class="navbar-nav ml-auto">
+                    <% if(!currentUser){ %>
+                        <li class="nav-item active"><a class="nav-link" href="/login">Login</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="/register">Sign Up</a></li>
+                    <%} else{%>
+                        <li class="nav-item active"><a class="nav-link" href="#">Signed In As <%=currentUser.username%></a></li>                   
+                        <li class="nav-item active"><a class="nav-link" href="/logout">Logout</a></li>
+                    <%{%>
+                </ul>
+            </div>      
+        </div>
+    </nav>
