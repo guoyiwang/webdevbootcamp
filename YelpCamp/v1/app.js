@@ -22,8 +22,12 @@ mongoose.connect('mongodb://localhost:27017/yelp_camp', {
 .catch(error => console.log(error.message));
 
 app.use(bodyParser.urlencoded({extended: true}));
+
+// set the view engine to ejs
 app.set("view engine", "ejs");
+
 // seedDB();
+
 app.use(express.static(__dirname + "/public"));
 
 //PASSPORT CONFIGURATION
@@ -49,7 +53,7 @@ app.use(function(req, res, next){
 app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
-
+ 
 app.listen(3000, function(){
     console.log("The YelpCamp Has Started!")
 });
