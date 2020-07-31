@@ -4,6 +4,7 @@ var bodyParser = require("body-parser");
 var mongoose = require('mongoose');
 var passport = require("passport");
 var LocalStrategy = require("passport-local");
+var methodOverride = require("method-override");
 var Campground = require("./models/campground");
 var Comment = require("./models/comment");
 var User = require("./models/user");
