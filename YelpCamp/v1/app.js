@@ -1,7 +1,8 @@
 var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
-var mongoose = require('mongoose');
+var mongoose = require("mongoose");
+var flash = require("connect-flash");
 var passport = require("passport");
 var LocalStrategy = require("passport-local");
 var methodOverride = require("method-override");
@@ -15,11 +16,11 @@ var commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes      = require("./routes/index")
 
-mongoose.connect('mongodb://localhost:27017/yelp_camp', {
+mongoose.connect("mongodb://localhost:27017/yelp_camp", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
-.then(() => console.log('Connected to DB!'))
+.then(() => console.log("Connected to DB!"))
 .catch(error => console.log(error.message));
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -27,10 +28,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 // set the view engine to ejs
 app.set("view engine", "ejs");
 
-// seedDB();
+seedDB();
 
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
+app.use(flash());
 
 //PASSPORT CONFIGURATION
 app.use(require("express-session")({
@@ -49,6 +51,8 @@ passport.deserializeUser(User.deserializeUser());
 // res.locals.currectUser will be availble for all tempates
 app.use(function(req, res, next){
     res.locals.currentUser = req.user;
+    res.locals.error = req.flash("error");
+    res.locals.success = req.flash("success");
     next();//move on to the next accurate code
 });
 

@@ -4,27 +4,30 @@ var Comment   = require("./models/comment");
  
 var data = [
     {
-        name: "Cloud's Rest", 
-        image: "https://farm4.staticflickr.com/3795/10131087094_c1c0a1c859.jpg",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        name: "Triangle Rock Club - Durham", 
+        price: "15",
+        image: "https://cdn2.apstatic.com/photos/climb/117263804_medium_1561478061.jpg",
+        description: "Triangle Rock Club began as a vision of two former Force Recon Marines who shared a passion for adventure and climbing. After the military and their mountaineering skills led them around the world and back again, Andrew and Luis began crafting a plan for a place where a community could be formed around a common passion for rock climbing",
         author:{
             id : "588c2e092403d111454fff76",
             username: "Jack"
         }
     },
     {
-        name: "Desert Mesa", 
-        image: "https://farm6.staticflickr.com/5487/11519019346_f66401b6c1.jpg",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        name: "Triangle Rock Club - Fayetteville", 
+        price: "15",
+        image: "https://cdn2.apstatic.com/photos/climb/115378923_medium_1538423720.jpg",
+        description: "In December 2007, visions and dreams were transformed into a reality when Triangle Rock Club opened the doors of its first location in Morrisville, North Carolina. In Fall 2014, the company opened a location in Fayetteville.",
         author:{
             id : "588c2e092403d111454fff71",
             username: "Jill"
         }
     },
     {
-        name: "Canyon Floor", 
-        image: "https://farm1.staticflickr.com/189/493046463_841a18169e.jpg",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        name: "Triangle Rock Club - Morrisville", 
+        price: "15",
+        image: "https://cdn2.apstatic.com/photos/climb/115361242_medium_1538056314.jpg",
+        description: "In December 2007, visions and dreams were transformed into a reality when Triangle Rock Club opened the doors of its first location in Morrisville, North Carolina. As the company grew in leadership, so did its overall size. In 2013, Triangle Rock Club opened its facility in Morrisville’s 17,000 square foot.",
         author:{
             id : "588c2e092403d111454fff77",
             username: "Jane"

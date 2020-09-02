@@ -11,5 +11,5 @@ name         url         verb     desc.
 =======================================
 INDEX  /campgrounds/index       GET      Display a list of all campgrounds
 NEW    /campgrounds/new   GET      Display a form to make a new campground
-CREATE /campgrounds       POST     Add a new camground to DB
+CREATE /campgrounds       POST     Add a new campground to DB
 SHOW   /campgrounds/:id   GET      Shows info about one campground
