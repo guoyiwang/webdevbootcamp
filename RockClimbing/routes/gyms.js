@@ -24,6 +24,14 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET
 })
 
+var NodeGeocoder = require('node-geocoder');
+var options = {
+    provider: "google",
+    httpAdapter: "https",
+    apiKey: process.env.GEOCODER_API,
+    formatter: null
+};
+var geocoder = NodeGeocoder(options);
 //INDEX - show all gyms
 router.get("/", function(req, res){
     // Get all gyms from DB
