@@ -7,6 +7,7 @@ var gymSchema = new mongoose.Schema({
    },
    price: String,
    image: String,
+   imageId: String,
    description: String,
    author: {
       id: {

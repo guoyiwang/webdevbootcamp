@@ -10,6 +10,7 @@ var Gym = require("./models/gym");
 var Comment = require("./models/comment");
 var User = require("./models/user");
 var seedDB = require("./seeds");
+require('dotenv').config()
 
 //requring routes
 var commentRoutes    = require("./routes/comments"),
