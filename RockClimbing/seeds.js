@@ -8,6 +8,9 @@ var data = [
         price: "15",
         image: "https://cdn2.apstatic.com/photos/climb/117263804_medium_1561478061.jpg",
         description: "Triangle Rock Club began as a vision of two former Force Recon Marines who shared a passion for adventure and climbing. After the military and their mountaineering skills led them around the world and back again, Andrew and Luis began crafting a plan for a place where a community could be formed around a common passion for rock climbing",
+        location: "1010 Martin Luther King Jr Pkwy #400, Durham, NC 27713, USA",
+        lat:35.9514155,
+        lng:-78.9243396,
         author:{
             id : "588c2e092403d111454fff76",
             username: "Jack"
@@ -18,6 +21,9 @@ var data = [
         price: "15",
         image: "https://cdn2.apstatic.com/photos/climb/115378923_medium_1538423720.jpg",
         description: "In December 2007, visions and dreams were transformed into a reality when Triangle Rock Club opened the doors of its first location in Morrisville, North Carolina. In Fall 2014, the company opened a location in Fayetteville.",
+        location: "5213 Raeford Rd #103, Fayetteville, NC 28304, USA",
+        lat:35.0413016,
+        lng:-78.9659719,
         author:{
             id : "588c2e092403d111454fff71",
             username: "Jill"
@@ -28,6 +34,9 @@ var data = [
         price: "15",
         image: "https://cdn2.apstatic.com/photos/climb/115361242_medium_1538056314.jpg",
         description: "In December 2007, visions and dreams were transformed into a reality when Triangle Rock Club opened the doors of its first location in Morrisville, North Carolina. As the company grew in leadership, so did its overall size. In 2013, Triangle Rock Club opened its facility in Morrisville’s 17,000 square foot.",
+        location: "102 Pheasant Wood Ct, Morrisville, NC 27560, USA",
+        lat:35.81124399999999,
+        lng:-78.8207602,
         author:{
             id : "588c2e092403d111454fff77",
             username: "Jane"

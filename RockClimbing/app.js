@@ -62,5 +62,6 @@ app.use("/gyms", gymRoutes);
 app.use("/gyms/:id/comments", commentRoutes);
  
 app.listen(3000, function(){
+    console.log(process.env.GEOCODER_API)
     console.log("The Rock Climbing Has Started!")
 });

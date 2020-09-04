@@ -15,9 +15,9 @@
                 <label for="location">Location</label>
                 <input id="location" class="form-control" type="text" name="gym[location]" value="<%= gym.location %>">
             </div>
-            <img src = <%=gym.image%> class="card-img-top">
             <label for="image">Image</label>
-            <input id="image" class="form-control"  type="file" name="image" accept="image/*" >
+            <img src = <%=gym.image%> class="card-img-top">
+            <input id="image" type="file" name="image" accept="image/*" >
             <div class="form-group">
                 <label for="description">Description</label>
                 <input id="description" class="form-control"  type="text" name="gym[description]" value = "<%= gym.description %>" >

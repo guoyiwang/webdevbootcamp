@@ -9,10 +9,14 @@
                 <li class="list-group-item">Info 3</li>
             </div>
             <div id="map"></div>
+            <!--<div>
+                parseFloat('<%= gym.location %>')
+                parseFloat('<%= gym.lng %>')
+            </div> -->
         </div>
         <div class="col-md-9">
             <div class="card">
-                <img class="card-img-top" src= "<%= gym.image %>" alt="Card image cap">
+                <img class="card-img-top" src="<%= gym.image %>" alt="Card image cap">
                 <div class="card-body">
                     <h4 class="float-right">$<%=gym.price%>/Per</h4>
                     <h4 class="card-title"><%=gym.name%></h4>
@@ -21,69 +25,71 @@
                         <em>Submitted By <%= gym.author.username %></em>
                     </p>
                     <% if(currentUser && gym.author.id.equals(currentUser._id)){ %>
-                        <a class="btn btn-xs btn-warning" href="/gyms/<%= gym._id %>/edit">Edit</a>
-                        <form class="delete-form" action="/gyms/<%= gym._id %>?_method=DELETE" method="POST">
-                            <button class="btn btn-xs btn-danger">Delete</button>
-                        </form>
+                    <a class="btn btn-xs btn-warning" href="/gyms/<%= gym._id %>/edit">Edit</a>
+                    <form class="delete-form" action="/gyms/<%= gym._id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-xs btn-danger">Delete</button>
+                    </form>
                     <% } %>
-                        <div class="text-right">
-                            <a class="btn btn-success" href="/gyms/<%= gym._id %>/comments/new">Add New Comment</a>
-                        </div>
+                    <div class="text-right">
+                        <a class="btn btn-success" href="/gyms/<%= gym._id %>/comments/new">Add New Comment</a>
+                    </div>
                 </div>
             </div>
             <div class="card card-body border-light">
 
                 <hr>
                 <% gym.comments.forEach(function(comment){ %>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <strong><%= comment.author.username %></strong>
-                            <span class="pull-right">10 days ago</span>
-                            <p>
-                                <%= comment.text %>
-                            </p>
-                            <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
-                                <a class="btn btn-xs btn-warning" href="/gyms/<%= gym._id %>/comments/<%= comment._id %>/edit">Edit</a>
-                                <form class="delete-form" action="/gyms/<%= gym._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
-                                    <input type="submit" class="btn btn-xs btn-danger" value="Delete">
-                                </form>
-                            <% } %>
-                        </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <strong><%= comment.author.username %></strong>
+                        <span class="pull-right">10 days ago</span>
+                        <p>
+                            <%= comment.text %>
+                        </p>
+                        <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                        <a class="btn btn-xs btn-warning"
+                            href="/gyms/<%= gym._id %>/comments/<%= comment._id %>/edit">Edit</a>
+                        <form class="delete-form" action="/gyms/<%= gym._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                            <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+                        </form>
+                        <% } %>
                     </div>
+                </div>
                 <% }) %>
-            </div>  
-        </div>    
+            </div>
+        </div>
     </div>
 </div>
 
-<script type="text/javascript">
-    function initMap() {
-      var lat = <%= campground.lat %>;
-      var lng = <%= campground.lng %>;
-      var center = {lat: lat, lng: lng };
-      var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 8,
-          center: center,
-          scrollwheel: false
-      });
-      var contentString = `
-        <strong><%= campground.name %><br />
-        <%= campground.location %></strong>
-        <p><%= campground.description %></p>
+<script>
+    function initMap(){
+        var lat = parseFloat('<%= gym.lat %>');
+        var lng = parseFloat('<%= gym.lng %>');
+        var center = { lat: lat, lng: lng };
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 8,
+            center: center,
+            scrollwheel: false
+        });
+        var contentString = `
+        <strong><%= gym.name %><br />
+        <%= gym.location %></strong>
+        <p><%= gym.description %></p>
       `
-      var infowindow = new google.maps.InfoWindow({
-        content: contentString
-      });
-      var marker = new google.maps.Marker({
-          position: center,
-          map: map
-      });
-      marker.addListener('click', function() {
-        infowindow.open(map, marker);
-      });
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+        var marker = new google.maps.Marker({
+            position: center,
+            map: map
+        });
+        marker.addListener('click', function () {
+            infowindow.open(map, marker);
+        });
     }
-  </script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeKHDVlAAk794BLo7SWJkoSIbxGDmLBqg&callback=initMap"></script>
-  
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeKHDVlAAk794BLo7SWJkoSIbxGDmLBqg&callback=initMap"></script>
+
 
 <%- include("../partials/footer") %>
