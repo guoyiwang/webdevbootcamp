@@ -17,19 +17,22 @@ var commentRoutes    = require("./routes/comments"),
     gymRoutes = require("./routes/gyms"),
     indexRoutes      = require("./routes/index")
 
-mongoose.connect("mongodb://localhost:27017/rock_climbing", {
+mongoose.connect("mongodb+srv://guoyi:" + process.env.mongoDBAtlasPassword + "@rockclimbing.zuqyq.mongodb.net/rockClimbing?retryWrites=true&w=majority", {   
+// "mongodb+srv://guoyi:WGY1993522@rockclimbing.zuqyq.mongodb.net/rockClimbing?retryWrites=true&w=majority"
+    //"mongodb://localhost:27017/rock_climbing"
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useCreateIndex: true
+//   useUnifiedTopology: true
 })
 .then(() => console.log("Connected to DB!"))
-.catch(error => console.log(error.message));
+.catch(error => console.log("ERROR:", error.message));
 
 app.use(bodyParser.urlencoded({extended: true}));
 
 // set the view engine to ejs
 app.set("view engine", "ejs");
 
-// seedDB();
+seedDB();
 
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));

@@ -96,7 +96,7 @@ router.get("/:id", function(req, res){
             res.redirect("back");
         } else {
              //render show template with that gym
-            res.render("gyms/show", {gym: foundGym});            
+            res.render("gyms/show", {gym: foundGym, apiKey: process.env.Geocoder_kep});            
         }
     });
 });
