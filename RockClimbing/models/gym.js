@@ -6,6 +6,7 @@ var gymSchema = new mongoose.Schema({
       required: "RockClimbing GYM name cannot be blank."
    },
    price: String,
+   createdAt: {type: Date, default: Date.now},
    image: String,
    imageId: String,
    description: String,

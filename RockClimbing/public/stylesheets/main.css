@@ -18,3 +18,36 @@
     height: 400px;
     width: 100%;
 }
+
+a:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.img-max {
+    max-width: 500px;
+    width:100%;
+}
+
+.card-img-top-index {
+    width: 100%;
+    height: 16vh;
+    object-fit: cover;
+}
+
+.card-footer{
+    width: 100%;
+    height: 2.2vmax;
+    text-align: center;
+    object-fit: cover;
+    display: block;
+    /* padding: 0px auto; */
+    padding: initial;
+    margin: 0px auto;
+}
+
+/* .btn-primary{
+    background-color: #FFC0CB !important;
+    outline:  #FFC0CB !important;
+    border-color:  #FFC0CB !important;
+} */

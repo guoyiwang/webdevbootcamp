@@ -2,15 +2,47 @@
 <div class="container">
     <h1 style="text-align:center">Sign Up!</h1>
     <div style="width:30%; margin: 25px auto">
-        <form action="/register" method="post">
+        <form action="/register" method="POST" enctype="multipart/form-data">
             <div class="form-group">
+                <label >Username</label>
                 <input type="text" class="form-control" name="username" placeholder="username">
             </div>
             <div class="form-group">
+                <label >Password</label>
                 <input type="password" class="form-control" name="password" placeholder="password">
+            </div>
+            <div class="form-group">
+                <label >First Name</label>
+                <input type="text" class="form-control" name="firstName" placeholder="first name">
+            </div>
+            <div class="form-group">
+                <label >Last Name</label>
+                <input type="text" class="form-control" name="lastName" placeholder="last name">
+            </div>
+            <div class="form-group">
+                <label >Email</label>
+                <input type="email" class="form-control" name="email" placeholder="email">
+            </div>
+            <label for="image">Profile</label>
+            <input id="image" type="file" name="image" accept="image/*">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="AdminCheck" onclick="Change()">
+                <label class="form-check-label" for="AdminCheck">Admin</label>
+              </div>
+            <div class="form-group d-none" id="AdminCode">
+                <input type="text" class="form-control" name="adminCode" placeholder="Admin code">
             </div>
             <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
         </form>
     </div>
 </div>
+<script type="text/javascript">
+    function Change(){
+        if((document.getElementById("AdminCheck").checked)){
+            document.getElementById("AdminCode").classList.remove('d-none');
+        }else{
+            document.getElementById("AdminCode").classList.add('d-none');
+        }
+    }
+</script>
 <%- include("./partials/footer") %>

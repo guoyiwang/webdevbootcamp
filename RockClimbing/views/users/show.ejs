@@ -1,0 +1,51 @@
+<%- include("../partials/header") %>
+
+<div class="container">
+    <%= currentUser._id %>
+    <%= user._id %>
+    <% if(currentUser && currentUser._id.equals(user._id) || currentUser && currentUser.isAdmin){ %> 
+        <h2 style="text-align:center"><%= user.username %>'s Profile</h2>
+        <div style="width:30%; margin: 25px auto">      
+            <form action="/users/<%= user._id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <div class="thumbnail">
+                    <img src="<%= user.profile %>" alt="user profile image" class="img-max">
+                </div>
+                <input id="image" type="file" name="image" accept="image/*" >
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" class="form-control" name="firstName" value="<%= user.firstName %>">
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" class="form-control" name="lastName" value="<%= user.lastName %>">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" name="email" value="<%= user.email %>">
+                </div>
+                
+                    <button type="submit" class="btn btn-primary btn-block">Edit!</button>      
+            </form>	
+        </div>
+    <% } else{%>
+        <div class="thumbnail" style="width:30%; margin: 25px auto"> 
+            <img src="<%= user.profile %>" alt="user profile image" class="img-max">
+            <div class="caption col">
+                <div class = "row-3">FirstName: <%= user.firstName %></div>
+                <div class = "row-3">LastName:<%= user.lastName %></div>
+                <div class = "row-3">Email:<a href="mailto:<%= user.email %>"><%= user.email %></a></div>
+                
+            </div>
+        </div>
+    <% } %>
+	<div style="width:30%; margin: 25px auto">
+		<h3 style="text-align:center">Found these Gyms:</h3>
+		<ul>
+		<% gyms.forEach(function(gym) { %>
+			<li><a href="/gyms/<%= gym.id %>"><%= gym.name %></a></li>
+		<% }); %>
+		</ul>
+	</div>
+</div>
+
+<%- include("../partials/footer") %> 

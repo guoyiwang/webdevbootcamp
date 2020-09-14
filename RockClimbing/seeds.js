@@ -12,8 +12,8 @@ var data = [
         lat:35.9514155,
         lng:-78.9243396,
         author:{
-            id : "588c2e092403d111454fff76",
-            username: "Jack"
+            id : "5f4f1c897d342f118fb585ac",
+            username: "Guoyi"
         }
     },
     {
@@ -25,8 +25,8 @@ var data = [
         lat:35.0413016,
         lng:-78.9659719,
         author:{
-            id : "588c2e092403d111454fff71",
-            username: "Jill"
+            id : "5f4f1c897d342f118fb585ac",
+            username: "Guoyi"
         }
     },
     {
@@ -38,8 +38,8 @@ var data = [
         lat:35.81124399999999,
         lng:-78.8207602,
         author:{
-            id : "588c2e092403d111454fff77",
-            username: "Jane"
+            id : "5f4f1c897d342f118fb585ac",
+            username: "Guoyi"
         }
     }
 ]

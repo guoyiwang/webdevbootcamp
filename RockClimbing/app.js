@@ -47,6 +47,8 @@ passport.use(new LocalStrategy(User.authenticate())); //User.authenticate() come
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+app.locals.moment = require("moment")
+
 // Middleware function for all routes, all routes should check the currectUser
 // req.user will be passed to all templates
 // res.locals.currectUser will be availble for all tempates
@@ -61,7 +63,8 @@ app.use("/", indexRoutes);
 app.use("/gyms", gymRoutes);
 app.use("/gyms/:id/comments", commentRoutes);
  
-app.listen(3000, function(){
+var port = process.env.PORT || 3000;
+app.listen(port, function(){
     console.log(process.env.GEOCODER_API)
     console.log("The Rock Climbing Has Started!")
 });

@@ -10,18 +10,36 @@
         </div>
     </header>
 
-    <div class="row text-center">
-        <% gyms.forEach(function(gym){%>
-        <div class="col-md-3 col-sm-6">
+    <!-- <div class="row text-center">
+        <!-- <% gyms.forEach(function(gym){%> -->
+        <!-- <div class="col-md-3 col-sm-6">
             <div class="card">               
-                <img src = <%=gym.image%> class="card-img-top">
-                <div class= "card-footer pt-0 pb-0">
-                    <h5 class="mt-1"><%= gym.name%></h5>
+                <img src = <%=gym.image%> class="card-img-top-index" >
+                <div class= "card-footer align-items-center d-flex justify-content-center">
+                    <h5 class="mb-0"><%= gym.name%></h5>
                 </div>
                 <a href="/gyms/<%= gym._id %>" class="btn btn-primary">More Info</a>            
             </div>
         </div>
-        <% });%>
+        <!-- <% });%> -->
+    <!-- </div> -->
+    <div class="row text-center">
+        <% for(var i = 0; i < gyms.length; i++){ %>
+        <% if(i<4){%>
+            <div class="col-md-3 col-sm-6">
+        <%}else{%>
+            <div class="col-md-3 col-sm-6 mt-4">
+        <% } %>
+        <!-- <div class="col-md-3 col-sm-6"> -->
+            <div class="card">               
+                <img src = <%=gyms[i].image%> class="card-img-top-index" >
+                <div class= "card-footer align-items-center d-flex justify-content-center">
+                    <h5 class="mb-0"><%= gyms[i].name%></h5>
+                </div>
+                <a href="/gyms/<%= gyms[i]._id %>" class="btn btn-primary">More Info</a>            
+            </div>
+        </div>
+        <% };%>
     </div>
 </div>
 <%- include("../partials/footer") %>
